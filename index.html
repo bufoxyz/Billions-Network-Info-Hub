@@ -55,11 +55,18 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
-      text-shadow: none; /* Hilangkan text-shadow agar fokus pada gradient */
+      text-shadow: none;
     }
     header p {
-        color: #b0b0b0;
         margin-top: -5px;
+    }
+    header p a { /* Gaya untuk tautan X/Twitter di bawah judul */
+        color: #b0b0b0;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    header p a:hover {
+        color: #00bfff;
     }
     header img {
       width: 80px;
@@ -77,7 +84,7 @@
       z-index: 2;
       max-width: 800px;
       margin: 2rem auto;
-      padding: 0; /* Hapus padding agar card mengambil alih */
+      padding: 0;
       background: none; 
       border-radius: 16px;
       box-shadow: none;
@@ -90,7 +97,7 @@
         border: 1px solid #1e2430;
         border-radius: 12px;
         padding: 25px;
-        margin: 25px 20px; /* Memberi jarak antar kartu dan dari sisi layar */
+        margin: 25px 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 15px #00bfff08;
         transition: transform 0.3s ease;
     }
@@ -101,7 +108,7 @@
     
     h2 {
       color: #ffffff;
-      border-left: 5px solid #00bfff; /* Dipertebal sedikit */
+      border-left: 5px solid #00bfff;
       padding-left: 0.8rem;
       margin-top: 0;
       margin-bottom: 1.5rem;
@@ -118,28 +125,24 @@
         transition: background 0.2s, padding-left 0.2s;
     }
     li:hover {
-        background: rgba(255, 255, 255, 0.05); /* Efek hover lembut pada list */
+        background: rgba(255, 255, 255, 0.05);
         padding-left: 10px;
         border-radius: 4px;
     }
     .role { font-weight: 600; }
     
-    /* 🎨 Role Colors (Discord Accurate) */
-    /* Warna sudah disesuaikan dengan input Anda */
-    .genesis { color: #00aaff; }
-    .verified { color: #e2507c; }
-    .id { color: #00c09a; }
-    .beta { color: #4e9fff; }
-    .meme { color: #2ecc71; }
-    .creator { color: #ff6633; }
-    .raids { color: #7289da; }
-    .superog { 
-        color: #ffd700; /* Warna Emas/Kuning Premium untuk role tertinggi */
-        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Menambahkan kilauan */
-    }
-    .og { color: #ff9900; }
-    .realhuman { color: #ff5544; }
-    .early { color: #b085f5; }
+    /* 🎨 Role Colors (DISCORD ACCURATE SESUAI SS) */
+    .genesis { color: #00aaff; }        /* Biru Terang */
+    .verified { color: #57f287; }       /* Hijau Neon */
+    .id { color: #40e0d0; }             /* Cyan Aqua */
+    .beta { color: #ff69b4; }           /* Pink Muda */
+    .meme { color: #556b2f; }           /* Hijau Tua / Olive */
+    .creator { color: #ff3333; }        /* Merah Cerah */
+    .raids { color: #ff6347; }          /* Merah Tomat */
+    .superog { color: #ff0000; }        /* Merah Penuh (Aksen Kuat) */
+    .og { color: #ffa500; }             /* Orange/Jingga */
+    .realhuman { color: #ff69b4; }      /* Pink (Sama dengan Beta di SS) */
+    .early { color: #9932cc; }          /* Ungu Tua */
     
     a {
       color: #00bfff;
@@ -159,11 +162,11 @@
     }
     .cta a {
       background: linear-gradient(90deg, #00bfff, #0077ff);
-      padding: 14px 30px; /* Ukuran lebih besar */
+      padding: 14px 30px;
       border-radius: 10px;
       color: white;
       font-weight: 600;
-      box-shadow: 0 0 20px #00bfff88; /* Bayangan CTA lebih kuat */
+      box-shadow: 0 0 20px #00bfff88;
       transition: 0.3s;
       display: inline-block;
     }
@@ -199,7 +202,9 @@
   <header>
     <img src="logo-billions.png" alt="Billions Network Logo" />
     <h1>Billions Network Info Hub</h1>
-    <p>by dbdoo</p>
+    <p>
+        <a href="https://x.com/Redd660" target="_blank">by @Redd660</a>
+    </p>
   </header>
   
   <main>
