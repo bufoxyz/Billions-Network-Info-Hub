@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Billions Network Info Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
   <style>
     /* soft animated glow background */
@@ -35,6 +35,8 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
+    
+    /* Perbaikan Header Profesional */
     header {
       position: relative;
       z-index: 2;
@@ -46,13 +48,20 @@
       animation: glowPulse 3s infinite alternate;
     }
     h1 {
-      font-size: 2.6rem;
-      color: #00bfff;
-      text-shadow: 0 0 10px #00bfff, 0 0 25px #0077ff55;
+      font-family: 'Montserrat', sans-serif; /* Menggunakan font yang lebih tegas */
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00bfff, #5a189a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
+      text-shadow: none; /* Hilangkan text-shadow agar fokus pada gradient */
+    }
+    header p {
+        color: #b0b0b0;
+        margin-top: -5px;
     }
     header img {
-      /* Ukuran dan efek untuk logo */
       width: 80px;
       filter: drop-shadow(0 0 12px #00bfffaa);
       animation: float 4s ease-in-out infinite;
@@ -61,22 +70,41 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
+    
+    /* Struktur Card Baru */
     main {
       position: relative;
       z-index: 2;
       max-width: 800px;
       margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(20, 22, 30, 0.9);
+      padding: 0; /* Hapus padding agar card mengambil alih */
+      background: none; 
       border-radius: 16px;
-      box-shadow: 0 0 25px #00bfff11;
-      border: 1px solid #1e2430;
+      box-shadow: none;
+      border: none;
     }
+    
+    /* Gaya Card (info-card) */
+    .info-card {
+        background: rgba(20, 22, 30, 0.9);
+        border: 1px solid #1e2430;
+        border-radius: 12px;
+        padding: 25px;
+        margin: 25px 20px; /* Memberi jarak antar kartu dan dari sisi layar */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 15px #00bfff08;
+        transition: transform 0.3s ease;
+    }
+    .info-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 20px #00bfff20;
+    }
+    
     h2 {
       color: #ffffff;
-      border-left: 4px solid #00bfff;
-      padding-left: 0.6rem;
-      margin-top: 2rem;
+      border-left: 5px solid #00bfff; /* Dipertebal sedikit */
+      padding-left: 0.8rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
       text-shadow: 0 0 10px #00bfff66;
     }
     ul {
@@ -84,9 +112,20 @@
       padding: 0;
       margin: 0.5rem 0 1rem 0;
     }
-    li { margin: 0.5rem 0; }
+    li { 
+        margin: 0.8rem 0;
+        padding: 4px 0;
+        transition: background 0.2s, padding-left 0.2s;
+    }
+    li:hover {
+        background: rgba(255, 255, 255, 0.05); /* Efek hover lembut pada list */
+        padding-left: 10px;
+        border-radius: 4px;
+    }
     .role { font-weight: 600; }
+    
     /* 🎨 Role Colors (Discord Accurate) */
+    /* Warna sudah disesuaikan dengan input Anda */
     .genesis { color: #00aaff; }
     .verified { color: #e2507c; }
     .id { color: #00c09a; }
@@ -94,10 +133,14 @@
     .meme { color: #2ecc71; }
     .creator { color: #ff6633; }
     .raids { color: #7289da; }
-    .superog { color: #ff3366; }
+    .superog { 
+        color: #ffd700; /* Warna Emas/Kuning Premium untuk role tertinggi */
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Menambahkan kilauan */
+    }
     .og { color: #ff9900; }
     .realhuman { color: #ff5544; }
     .early { color: #b085f5; }
+    
     a {
       color: #00bfff;
       text-decoration: none;
@@ -107,36 +150,41 @@
       color: #7edbff;
       text-shadow: 0 0 8px #00bfff;
     }
+    
+    /* Gaya CTA yang lebih kuat */
     .cta {
       text-align: center;
-      margin-top: 1.8rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
     }
     .cta a {
       background: linear-gradient(90deg, #00bfff, #0077ff);
-      padding: 12px 22px;
+      padding: 14px 30px; /* Ukuran lebih besar */
       border-radius: 10px;
       color: white;
       font-weight: 600;
-      box-shadow: 0 0 15px #00bfff44;
+      box-shadow: 0 0 20px #00bfff88; /* Bayangan CTA lebih kuat */
       transition: 0.3s;
       display: inline-block;
     }
     .cta a:hover {
-      box-shadow: 0 0 20px #00bfffaa;
+      box-shadow: 0 0 30px #00bffffa;
       transform: scale(1.05);
     }
+    
     footer {
       text-align: center;
       padding: 2rem 1rem;
       color: #888;
       border-top: 1px solid #1f2230;
-      margin-top: 3rem;
+      margin-top: 0;
       font-size: 0.9rem;
       position: relative;
       z-index: 2;
     }
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
@@ -153,69 +201,81 @@
     <h1>Billions Network Info Hub</h1>
     <p>by dbdoo</p>
   </header>
+  
   <main>
-    <section>
-      <h2>Claimable Roles</h2>
-      <ul>
-        <li><span class="role genesis">@Billions Genesis</span> — Billions Genesis NFT holder</li>
-        <li><span class="role verified">@Verified Human</span> — Verify as a real Human</li>
-        <li><span class="role id">@ID Evangelist</span> — Live and breathe ID</li>
-        <li><span class="role beta">@Beta Tester</span> — Billions Beta Tester</li>
-        <li><span class="role meme">@Meme Master</span> — Experienced Meme</li>
-        <li><span class="role creator">@Content Creator</span> — Content Creator on different Social Platforms</li>
-        <li><span class="role raids">@Raids</span> — Support Billions on Twitter. Go to 
-          <a href="https://x.com/billions_ntwk" target="_blank">#｜✖｜twitter</a>
-        </li>
-      </ul>
-    </section>
+    <div class="info-card">
+      <section>
+        <h2>Claimable Roles</h2>
+        <ul>
+          <li><span class="role genesis">@Billions Genesis</span> — Billions Genesis NFT holder</li>
+          <li><span class="role verified">@Verified Human</span> — Verify as a real Human</li>
+          <li><span class="role id">@ID Evangelist</span> — Live and breathe ID</li>
+          <li><span class="role beta">@Beta Tester</span> — Billions Beta Tester</li>
+          <li><span class="role meme">@Meme Master</span> — Experienced Meme</li>
+          <li><span class="role creator">@Content Creator</span> — Content Creator on different Social Platforms</li>
+          <li><span class="role raids">@Raids</span> — Support Billions on Twitter. Go to 
+            <a href="https://x.com/billions_ntwk" target="_blank">#｜✖｜twitter</a>
+          </li>
+        </ul>
+      </section>
+    </div>
     
-    <section>
-      <h2>Earnable Roles</h2>
-      <ul>
-        <li><span class="role superog">@Super OG</span> — Only for super OG</li>
-        <li><span class="role og">@OG</span> — Be a contributor and have positive values</li>
-        <li><span class="role realhuman">@Real Human</span> — Be active and don't act like a bot</li>
-      </ul>
-    </section>
+    <div class="info-card">
+      <section>
+        <h2>Earnable Roles</h2>
+        <ul>
+          <li><span class="role superog">@Super OG</span> — Only for super OG</li>
+          <li><span class="role og">@OG</span> — Be a contributor and have positive values</li>
+          <li><span class="role realhuman">@Real Human</span> — Be active and don't act like a bot</li>
+        </ul>
+      </section>
+    </div>
     
-    <section>
-      <h2>Other Roles</h2>
-      <ul>
-        <li><span class="role early">@Early Adopter</span> — Super early Members</li>
-      </ul>
-    </section>
+    <div class="info-card">
+      <section>
+        <h2>Other Roles</h2>
+        <ul>
+          <li><span class="role early">@Early Adopter</span> — Super early Members</li>
+        </ul>
+      </section>
+    </div>
     
-    <section>
-      <h2>My Journey in Billions Network</h2>
-      <p>• Joined Discord — <strong>March 25, 2025</strong></p>
-      <p>• First interaction & introduction — <a href="https://discord.com/channels/1347581046442688553/1351538390012788837/1355677345108988077" target="_blank">March 30, 2025</a></p>
-      <p>• Contributed content on X about Billions — <a href="https://discord.com/channels/1347581046442688553/1353336758808477736/1407170570239610931" target="_blank">August 19, 2025</a></p>
-    </section>
+    <div class="info-card">
+      <section>
+        <h2>My Journey in Billions Network</h2>
+        <p>• Joined Discord — <strong>March 25, 2025</strong></p>
+        <p>• First interaction & introduction — <a href="https://discord.com/channels/1347581046442688553/1351538390012788837/1355677345108988077" target="_blank">March 30, 2025</a></p>
+        <p>• Contributed content on X about Billions — <a href="https://discord.com/channels/1347581046442688553/1353336758808477736/1407170570239610931" target="_blank">August 19, 2025</a></p>
+      </section>
+    </div>
     
-    <section>
-      <h2>Why I Want to Join as Community Helper</h2>
-      <p>
-        My goal is to become an active part of the Billions Network community — assisting others, contributing creative ideas, and helping it grow together.
-        Earning the **Super OG** role would represent genuine participation and dedication to the network’s vision.
-      </p>
-      <p>
-        Join Billions Network with my referral link:
-        <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank">signup.billions.network</a>
-      </p>
-    </section>
+    <div class="info-card">
+      <section>
+        <h2>Why I Want to Join as Community Helper</h2>
+        <p>
+          My goal is to become an active part of the Billions Network community — assisting others, contributing creative ideas, and helping it grow together.
+          Earning the **Super OG** role would represent genuine participation and dedication to the network’s vision.
+        </p>
+        <p>
+          Join Billions Network with my referral link:
+          <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank">signup.billions.network</a>
+        </p>
+      </section>
+    </div>
     
+    <div class="info-card">
+        <section>
+          <h2>Links</h2>
+          <p>
+            <a href="https://x.com/billions_ntwk" target="_blank">Billions on X</a> |
+            <a href="https://discord.gg/billions-ntwk" target="_blank">Join Discord</a>
+          </p>
+        </section>
+    </div>
+
     <section class="cta">
       <a href="https://discord.gg/billions-ntwk" target="_blank">🚀 Join the Billions Community</a>
     </section>
-    
-    <section>
-      <h2>Links</h2>
-      <p>
-        <a href="https://x.com/billions_ntwk" target="_blank">Billions on X</a> |
-        <a href="https://discord.gg/billions-ntwk" target="_blank">Join Discord</a>
-      </p>
-    </section>
-
   </main>
   
   <footer>
