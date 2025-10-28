@@ -1,189 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Billions Network Info Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      background: radial-gradient(circle at top, #0f1117, #05060a);
-      color: #d4d4dc;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: left;
-      animation: fadeIn 1.2s ease-in-out;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billions Network Info Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ====== BASIC STYLE ====== */
+        body {
+            background: radial-gradient(circle at top, #0f1117, #05060a);
+            color: #d4d4dc;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            overflow-x: hidden;
+            animation: fadeIn 1.2s ease-in-out;
+        }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(90deg, #11131a, #161920);
-      border-bottom: 1px solid #1f2230;
-      box-shadow: 0 0 25px #00bfff33;
-      animation: glowPulse 3s infinite alternate;
-    }
+        /* ====== AURORA GLOW ====== */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(0,191,255,0.05), transparent 70%),
+                        radial-gradient(circle at 70% 60%, rgba(255,0,191,0.05), transparent 70%),
+                        radial-gradient(circle at 90% 10%, rgba(255,255,0,0.05), transparent 70%);
+            animation: aurora 20s infinite linear;
+            z-index: -1;
+        }
 
-    h1 {
-      font-size: 2.6rem;
-      color: #00bfff;
-      text-shadow: 0 0 10px #00bfff, 0 0 25px #0077ff55;
-    }
+        @keyframes aurora {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, -30px) rotate(45deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(20, 22, 30, 0.85);
-      border-radius: 16px;
-      box-shadow: 0 0 25px #00bfff11;
-      border: 1px solid #1e2430;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    h2 {
-      color: #ffffff;
-      border-left: 4px solid #00bfff;
-      padding-left: 0.6rem;
-      margin-top: 2rem;
-      text-shadow: 0 0 10px #00bfff66;
-    }
+        /* ====== HEADER ====== */
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0.5rem 0 1rem 0;
-    }
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #00b4ff, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
 
-    li {
-      margin: 0.5rem 0;
-    }
+        header p {
+            font-size: 1.1em;
+            color: #a0a0a0;
+            margin-top: 8px;
+        }
 
-    .role {
-      font-weight: 600;
-    }
+        /* ====== CONTENT ====== */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-    /* 🎨 Role Colors (Discord Accurate) */
-    .genesis { color: #00aaff; }          /* Billions Genesis */
-    .verified { color: #e2507c; }         /* Verified Human */
-    .id { color: #00c09a; }               /* ID Evangelist */
-    .beta { color: #4e9fff; }             /* Beta Tester */
-    .meme { color: #2ecc71; }             /* Meme Master */
-    .creator { color: #ff6633; }          /* Content Creator */
-    .raids { color: #7289da; }            /* Raids */
-    .superog { color: #ff3366; }          /* Super OG */
-    .og { color: #ff9900; }               /* OG */
-    .realhuman { color: #ff5544; }        /* Real Human */
-    .early { color: #b085f5; }            /* Early Adopter */
+        .role-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
 
-    a {
-      color: #00bfff;
-      text-decoration: none;
-      transition: 0.2s;
-    }
+        .role-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.06);
+        }
 
-    a:hover {
-      color: #7edbff;
-      text-shadow: 0 0 8px #00bfff;
-    }
+        .role-card h3 {
+            margin: 0 0 10px;
+            color: #00b4ff;
+        }
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #888;
-      border-top: 1px solid #1f2230;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
+        /* ====== CTA (Call to Action) ====== */
+        .cta {
+            text-align: center;
+            padding: 50px 20px;
+        }
 
-    p {
-      margin: 0.6rem 0;
-    }
+        .cta a {
+            display: inline-block;
+            background: linear-gradient(90deg, #00b4ff, #8a2be2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
 
-    strong {
-      color: #fff;
-    }
+        .cta a:hover {
+            filter: brightness(1.2);
+            transform: translateY(-2px);
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes glowPulse {
-      from { box-shadow: 0 0 15px #00bfff33; }
-      to { box-shadow: 0 0 30px #00bfff77; }
-    }
-  </style>
+        /* ====== FOOTER ====== */
+        footer {
+            text-align: center;
+            color: #888;
+            padding: 30px 10px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Billions Network Info Hub</h1>
-    <p>by dbdoo</p>
-  </header>
+    <header>
+        <h1>Billions Network</h1>
+        <p>Community roles, perks, and point system explained.</p>
+    </header>
 
-  <main>
-    <section>
-      <h2>Claimable Roles</h2>
-      <ul>
-        <li><span class="role genesis">@Billions Genesis</span> — Billions Genesis NFT holder</li>
-        <li><span class="role verified">@Verified Human</span> — Verify as a real Human</li>
-        <li><span class="role id">@ID Evangelist</span> — Live and breathe ID</li>
-        <li><span class="role beta">@Beta Tester</span> — Billions Beta Tester</li>
-        <li><span class="role meme">@Meme Master</span> — Experienced Meme</li>
-        <li><span class="role creator">@Content Creator</span> — Content Creator on different Social Platforms</li>
-        <li><span class="role raids">@Raids</span> — Support Billions on Twitter. Go to 
-          <a href="https://x.com/billions_ntwk" target="_blank">#｜✖｜twitter</a>
-        </li>
-      </ul>
-    </section>
+    <div class="container">
+        <div class="role-card">
+            <h3>💎 Warden Role</h3>
+            <p>Access to **exclusive raffles** and early events. Stay active in Discord for point rewards!</p>
+        </div>
 
-    <section>
-      <h2>Earnable Roles</h2>
-      <ul>
-        <li><span class="role superog">@Super OG</span> — Only for super OG</li>
-        <li><span class="role og">@OG</span> — Be a contributor and have positive values</li>
-        <li><span class="role realhuman">@Real Human</span> — Be active and don't act like a bot</li>
-      </ul>
-    </section>
+        <div class="role-card">
+            <h3>🚀 Billionaire Role</h3>
+            <p>**Premium chat access**, higher rep multiplier, and early access to reward cycles.</p>
+        </div>
 
-    <section>
-      <h2>Other Roles</h2>
-      <ul>
-        <li><span class="role early">@Early Adopter</span> — Super early Members</li>
-      </ul>
-    </section>
+        <div class="role-card">
+            <h3>🎁 Special Events</h3>
+            <p>Keep an eye on the Discord server and X feed — random events, raffles, and XP drops incoming!</p>
+        </div>
+    </div>
 
-    <section>
-      <h2>My Journey in Billions Network</h2>
-      <p>• Joined Discord — <strong>March 25, 2025</strong></p>
-      <p>• First interaction & introduction — <a href="https://discord.com/channels/1347581046442688553/1351538390012788837/1355677345108988077" target="_blank">March 30, 2025</a></p>
-      <p>• Contributed content on X about Billions — <a href="https://discord.com/channels/1347581046442688553/1353336758808477736/1407170570239610931" target="_blank">August 19, 2025</a></p>
-    </section>
+    <div class="cta">
+        <a href="https://discord.gg/" target="_blank">Join the Discord</a>
+    </div>
 
-    <section>
-      <h2>Why I Want to Join as Community Helper</h2>
-      <p>
-        My goal is to become an active part of the Billions Network community — assisting others, contributing creative ideas, and helping it grow together.
-        Earning the <strong>Super OG</strong> role would represent genuine participation and dedication to the network’s vision.
-      </p>
-      <p>
-        Join Billions Network with my referral link:
-        <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank">signup.billions.network</a>
-      </p>
-    </section>
-
-    <section>
-      <h2>Links</h2>
-      <p>
-        <a href="https://x.com/billions_ntwk" target="_blank">Billions on X</a> |
-        <a href="https://discord.gg/billions-ntwk" target="_blank">Join Discord</a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 dbdoo — Made with ❤️ for the Billions Network community
-  </footer>
+    <footer>
+        <p>© 2025 Billions Network. Built with 💙 by CT.</p>
+    </footer>
 </body>
 </html>
-
