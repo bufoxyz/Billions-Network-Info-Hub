@@ -5,30 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Billions Network Info Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalH2Vd+c81v6S3p99pWvGq+jK2p7v4yK2v+s0PjE0gL+k9m6+2y/sK+jJ+d+b+P+j8g+Q+q+q+xQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
-    /* Mengaktifkan Smooth Scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* LAPISAN OVERLAY UNTUK GAMBAR LATAR BELAKANG */
-    body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.2); /* Hitam dengan transparansi 20% */
-        z-index: 1; 
-    }
-
     /* Latar Belakang Menggunakan Gambar Anda */
     body {
-      background-image: url('background-billions.jpg'); 
+      background-image: url('background-billions.jpg'); /* Ganti dengan nama file gambar Anda */
       background-size: cover; 
       background-position: center center; 
       background-attachment: fixed; 
@@ -44,8 +26,13 @@
       overflow-x: hidden;
     }
     
+    /* Efek Aurora Glow Dihilangkan */
     body::before {
       content: none;
+    }
+    @keyframes aurora {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     
     /* Perbaikan Header Profesional dengan Background Biru Solid */
@@ -193,10 +180,10 @@
       text-align: center;
       margin-top: 3rem;
       margin-bottom: 3rem;
-      display: flex; 
-      flex-wrap: wrap; 
-      justify-content: center; 
-      gap: 20px; 
+      display: flex; /* Mengatur CTA menjadi flex container */
+      flex-wrap: wrap; /* Memungkinkan item CTA untuk wrap ke baris berikutnya */
+      justify-content: center; /* Memusatkan item CTA secara horizontal */
+      gap: 20px; /* Jarak antar tombol CTA */
     }
     .cta a {
       background: linear-gradient(90deg, #00bfff, #0077ff);
@@ -206,10 +193,10 @@
       font-weight: 600;
       box-shadow: 0 0 25px #00bfffaa;
       transition: 0.3s;
-      display: inline-flex; 
-      align-items: center; 
-      gap: 10px; 
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+      display: inline-flex; /* Menggunakan inline-flex untuk ikon dan teks */
+      align-items: center; /* Memusatkan ikon dan teks secara vertikal */
+      gap: 10px; /* Jarak antara ikon dan teks */
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Tambah shadow teks pada tombol CTA */
     }
     .cta a:hover {
       box-shadow: 0 0 40px #00bffffa;
@@ -218,7 +205,7 @@
 
     /* Gaya khusus untuk tombol Discord */
     .cta .discord-button {
-      background: linear-gradient(90deg, #5865F2, #4752C4); 
+      background: linear-gradient(90deg, #5865F2, #4752C4); /* Warna Discord */
       box-shadow: 0 0 25px rgba(88, 101, 242, 0.7);
     }
     .cta .discord-button:hover {
@@ -227,50 +214,12 @@
 
     /* Gaya khusus untuk tombol Twitter (X) */
     .cta .twitter-button {
-      background: linear-gradient(90deg, #1DA1F2, #0C85D0); 
+      background: linear-gradient(90deg, #1DA1F2, #0C85D0); /* Warna Twitter */
       box-shadow: 0 0 25px rgba(29, 161, 242, 0.7);
     }
     .cta .twitter-button:hover {
       box-shadow: 0 0 40px rgba(29, 161, 242, 0.9);
     }
-
-    /* === FIXED NAV MENU === */
-    #side-nav {
-        position: fixed;
-        top: 50%;
-        right: 20px; 
-        transform: translateY(-50%);
-        z-index: 1000;
-        list-style: none;
-        padding: 10px;
-        background: rgba(20, 22, 30, 0.9); /* Dark semi-transparent background */
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        border: 1px solid #1e2430;
-    }
-    #side-nav li {
-        margin: 8px 0;
-    }
-    #side-nav a {
-        display: block;
-        padding: 5px 10px;
-        color: #d4d4dc;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: background 0.3s, color 0.3s;
-        font-size: 0.9rem;
-    }
-    #side-nav a:hover {
-        background: #00bfff;
-        color: #14161e;
-        text-shadow: none;
-    }
-    @media (max-width: 900px) {
-        #side-nav {
-            display: none; /* Sembunyikan Navigasi Samping di layar kecil */
-        }
-    }
-    /* ====================== */
     
     footer {
       text-align: center;
@@ -290,16 +239,14 @@
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* Animasi glowPulse tidak lagi digunakan pada header, namun mungkin pada elemen lain jika ada */
+    @keyframes glowPulse {
+      from { box-shadow: 0 0 15px rgba(0, 191, 255, 0.2); }
+      to { box-shadow: 0 0 30px rgba(0, 191, 255, 0.4); }
+    }
   </style>
 </head>
 <body>
-
-  <ul id="side-nav">
-    <li><a href="#claimable-roles">Claimable Roles</a></li>
-    <li><a href="#earnable-roles">Earnable Roles</a></li>
-    <li><a href="#airdrop-task">Airdrop Task</a></li>
-    <li><a href="#my-journey">My Journey</a></li>
-  </ul>
   <header>
     <img src="logo-billions.png" alt="Billions Network Logo" />
     <h1>Billions Network Info Hub</h1>
@@ -309,30 +256,30 @@
   </header>
   
   <main>
-    <div id="claimable-roles" class="info-card">
+    <div class="info-card">
       <section>
         <h2>Claimable Roles</h2>
         <ul>
-          <li><span class="role genesis">@Billions Genesis</span> — Holder of the Billions Genesis NFT.</li>
-          <li><span class="role verified">@Verified Human</span> — Members who have completed the human verification process.</li>
-          <li><span class="role id">@ID Evangelist</span> — Dedicated members who actively promote Billions ID.</li>
-          <li><span class="role beta">@Beta Tester</span> — Official Billions Network Beta Tester.</li>
-          <li><span class="role meme">@Meme Master</span> — Experienced member in creating engaging memes.</li>
-          <li><span class="role creator">@Content Creator</span> — Recognized content creator on various social platforms.</li>
-          <li><span class="role raids">@Raids</span> — Members who actively support Billions on X (Twitter).
-            <a href="https://x.com/billions_ntwk" target="_blank">Go to #｜✖｜twitter</a>
+          <li><span class="role genesis">@Billions Genesis</span> — Billions Genesis NFT holder</li>
+          <li><span class="role verified">@Verified Human</span> — Verify as a real Human</li>
+          <li><span class="role id">@ID Evangelist</span> — Live and breathe ID</li>
+          <li><span class="role beta">@Beta Tester</span> — Billions Beta Tester</li>
+          <li><span class="role meme">@Meme Master</span> — Experienced Meme</li>
+          <li><span class="role creator">@Content Creator</span> — Content Creator on different Social Platforms</li>
+          <li><span class="role raids">@Raids</span> — Support Billions on Twitter. Go to 
+            <a href="https://x.com/billions_ntwk" target="_blank">#｜✖｜twitter</a>
           </li>
         </ul>
       </section>
     </div>
     
-    <div id="earnable-roles" class="info-card">
+    <div class="info-card">
       <section>
         <h2>Earnable Roles</h2>
         <ul>
-          <li><span class="role superog">@Super OG</span> — Role reserved for the most dedicated and super early contributors.</li>
-          <li><span class="role og">@OG</span> — Recognized contributor with positive and impactful values in the community.</li>
-          <li><span class="role realhuman">@Real Human</span> — Be an active member and engage authentically (not a bot).</li>
+          <li><span class="role superog">@Super OG</span> — Only for super OG</li>
+          <li><span class="role og">@OG</span> — Be a contributor and have positive values</li>
+          <li><span class="role realhuman">@Real Human</span> — Be active and don't act like a bot</li>
         </ul>
       </section>
     </div>
@@ -341,12 +288,12 @@
       <section>
         <h2>Other Roles</h2>
         <ul>
-          <li><span class="role early">@Early Adopter</span> — Super early community members.</li>
+          <li><span class="role early">@Early Adopter</span> — Super early Members</li>
         </ul>
       </section>
     </div>
     
-    <div id="my-journey" class="info-card">
+    <div class="info-card">
       <section>
         <h2>My Journey in Billions Network</h2>
         <p>• Joined Discord — <strong>March 25, 2025</strong></p>
@@ -355,7 +302,7 @@
       </section>
     </div>
     
-    <div id="airdrop-task" class="info-card airdrop-card">
+    <div class="info-card airdrop-card">
       <section>
         <h2>Join Billions Network Airdrop!</h2>
         <p>
@@ -378,7 +325,7 @@
       </section>
     </div>
 
-    <div id="community-helper" class="info-card">
+    <div class="info-card">
       <section>
         <h2>Why I Want to Join as Community Helper</h2>
         <p>
@@ -387,18 +334,15 @@
         </p>
       </section>
     </div>
-    
 
-<section class="cta">
+    <section class="cta">
       <a href="https://discord.gg/billions-ntwk" target="_blank" class="discord-button">
         <i class="fab fa-discord"></i> Join Discord
       </a>
       <a href="https://x.com/billions_ntwk" target="_blank" class="twitter-button">
         <i class="fab fa-x-twitter"></i> Follow on X
       </a>
-      
-
-<a href="https://signup.billions.network?rc=WQROTQLC" target="_blank">
+      <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank">
         🚀 Join the Billions Community
       </a>
     </section>
