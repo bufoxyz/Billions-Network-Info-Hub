@@ -10,12 +10,12 @@
     /* Latar Belakang Menggunakan Gambar Anda */
     body {
       background-image: url('background-billions.jpg'); /* Ganti dengan nama file gambar Anda */
-      background-size: cover; /* Pastikan gambar menutupi seluruh area */
-      background-position: center center; /* Posisikan di tengah */
-      background-attachment: fixed; /* Gambar tetap saat discroll */
-      background-repeat: no-repeat; /* Gambar tidak berulang */
+      background-size: cover; 
+      background-position: center center; 
+      background-attachment: fixed; 
+      background-repeat: no-repeat; 
       
-      color: #d4d4dc; /* Warna teks default */
+      color: #d4d4dc;
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
@@ -42,11 +42,8 @@
       padding: 3rem 1rem 2rem 1rem;
       /* LATAR BELAKANG BIRU SOLID */
       background: #0077FF; 
-      /* Hapus border-bottom atau ubah warnanya agar lebih cocok */
       border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-      /* Ubah shadow agar lebih cocok dengan background cerah */
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      /* Hapus animasi glowPulse pada header jika tidak cocok dengan solid background */
       animation: none; 
     }
     h1 {
@@ -57,24 +54,24 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
-      /* Tambahkan sedikit outline/shadow agar lebih tajam di atas biru solid */
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-                   0 0 20px rgba(0, 191, 255, 0.5); 
+      /* MENGHILANGKAN EFEK BLUR: Text shadow lama dihilangkan atau diubah */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tambahkan shadow kecil agar terlihat menonjol */
     }
     header p {
         margin-top: -5px;
     }
     header p a {
-        color: #e0e0e0; /* Teks link diubah agar lebih terang di biru solid */
+        color: #e0e0e0;
         text-decoration: none;
         transition: color 0.2s;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow kecil agar terbaca di background biru */
     }
     header p a:hover {
-        color: #ffffff; /* Hover lebih terang */
+        color: #ffffff;
     }
     header img {
       width: 80px;
-      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); /* Bayangan logo disesuaikan */
+      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
       animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
