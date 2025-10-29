@@ -50,24 +50,28 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
-      background: linear-gradient(90deg, #00bfff, #5a189a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      /* MENGHILANGKAN GRADIENT, JADIKAN WARNA PUTIH SOLID */
+      color: #ffffff; 
+      background: none; 
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
       margin-top: 0.5rem;
-      /* MENGHILANGKAN EFEK BLUR: Text shadow lama dihilangkan atau diubah */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tambahkan shadow kecil agar terlihat menonjol */
+      /* HILANGKAN SEMUA TEXT SHADOW */
+      text-shadow: none; 
     }
     header p {
         margin-top: -5px;
     }
     header p a {
-        color: #e0e0e0;
+        /* JADIKAN WARNA PUTIH SOLID */
+        color: #ffffff;
         text-decoration: none;
         transition: color 0.2s;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow kecil agar terbaca di background biru */
+        /* HILANGKAN SEMUA TEXT SHADOW */
+        text-shadow: none; 
     }
     header p a:hover {
-        color: #ffffff;
+        color: #e0e0e0;
     }
     header img {
       width: 80px;
