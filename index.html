@@ -9,14 +9,13 @@
   <style>
     /* Latar Belakang Menggunakan Gambar Anda */
     body {
-      /* Ganti nama file jika Anda menggunakan nama yang berbeda */
-      background-image: url('background-billions.jpg'); 
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+      background-image: url('background-billions.jpg'); /* Ganti dengan nama file gambar Anda */
+      background-size: cover; /* Pastikan gambar menutupi seluruh area */
+      background-position: center center; /* Posisikan di tengah */
+      background-attachment: fixed; /* Gambar tetap saat discroll */
+      background-repeat: no-repeat; /* Gambar tidak berulang */
       
-      color: #d4d4dc;
+      color: #d4d4dc; /* Warna teks default */
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
@@ -35,17 +34,20 @@
       to { transform: rotate(360deg); }
     }
     
-    /* Perbaikan Header Profesional */
+    /* Perbaikan Header Profesional dengan Background Biru Solid */
     header {
       position: relative;
       z-index: 2;
       text-align: center;
       padding: 3rem 1rem 2rem 1rem;
-      /* Dibuat solid agar tidak menembus gambar latar belakang */
-      background: #11131a; 
-      border-bottom: 1px solid #1f2230;
-      box-shadow: 0 0 25px #00bfff55;
-      animation: glowPulse 3s infinite alternate;
+      /* LATAR BELAKANG BIRU SOLID */
+      background: #0077FF; 
+      /* Hapus border-bottom atau ubah warnanya agar lebih cocok */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+      /* Ubah shadow agar lebih cocok dengan background cerah */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      /* Hapus animasi glowPulse pada header jika tidak cocok dengan solid background */
+      animation: none; 
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
@@ -55,22 +57,24 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
-      text-shadow: 0 0 10px rgba(0, 191, 255, 0.4); 
+      /* Tambahkan sedikit outline/shadow agar lebih tajam di atas biru solid */
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                   0 0 20px rgba(0, 191, 255, 0.5); 
     }
     header p {
         margin-top: -5px;
     }
     header p a {
-        color: #b0b0b0;
+        color: #e0e0e0; /* Teks link diubah agar lebih terang di biru solid */
         text-decoration: none;
         transition: color 0.2s;
     }
     header p a:hover {
-        color: #00bfff;
+        color: #ffffff; /* Hover lebih terang */
     }
     header img {
       width: 80px;
-      filter: drop-shadow(0 0 15px #00bfffaa);
+      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); /* Bayangan logo disesuaikan */
       animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
@@ -78,7 +82,7 @@
       50% { transform: translateY(-6px); }
     }
     
-    /* Struktur Card Baru */
+    /* Struktur Card */
     main {
       position: relative;
       z-index: 2;
@@ -93,7 +97,7 @@
     
     /* Gaya Card (info-card): Kontras Ditingkatkan menjadi SOLID */
     .info-card {
-        background: #14161e; /* Warna solid, menghilangkan transparansi 0.9 */
+        background: #14161e; /* Warna solid gelap */
         border: 1px solid #1e2430;
         border-radius: 12px;
         padding: 25px;
@@ -204,8 +208,7 @@
       font-size: 0.9rem;
       position: relative;
       z-index: 2;
-      /* Dibuat solid agar tidak menembus gambar latar belakang */
-      background: #14161e;
+      background: #14161e; /* Latar belakang footer solid gelap */
     }
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
