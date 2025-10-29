@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Billions Network Info Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalH2Vd+c81v6S3p99pWvGq+jK2p7v4yK2v+s0PjE0gL+k9m6+2y/sK+jJ+d+b+P+j8g+Q+q+q+xQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
     /* Latar Belakang Menggunakan Gambar Anda */
@@ -40,7 +41,6 @@
       z-index: 2;
       text-align: center;
       padding: 3rem 1rem 2rem 1rem;
-      /* LATAR BELAKANG BIRU SOLID */
       background: #0077FF; 
       border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -50,24 +50,20 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
-      /* MENGHILANGKAN GRADIENT, JADIKAN WARNA PUTIH SOLID */
       color: #ffffff; 
       background: none; 
       -webkit-background-clip: unset;
       -webkit-text-fill-color: unset;
       margin-top: 0.5rem;
-      /* HILANGKAN SEMUA TEXT SHADOW */
       text-shadow: none; 
     }
     header p {
         margin-top: -5px;
     }
     header p a {
-        /* JADIKAN WARNA PUTIH SOLID */
         color: #ffffff;
         text-decoration: none;
         transition: color 0.2s;
-        /* HILANGKAN SEMUA TEXT SHADOW */
         text-shadow: none; 
     }
     header p a:hover {
@@ -98,7 +94,7 @@
     
     /* Gaya Card (info-card): Kontras Ditingkatkan menjadi SOLID */
     .info-card {
-        background: #14161e; /* Warna solid gelap */
+        background: #14161e; 
         border: 1px solid #1e2430;
         border-radius: 12px;
         padding: 25px;
@@ -184,6 +180,10 @@
       text-align: center;
       margin-top: 3rem;
       margin-bottom: 3rem;
+      display: flex; /* Mengatur CTA menjadi flex container */
+      flex-wrap: wrap; /* Memungkinkan item CTA untuk wrap ke baris berikutnya */
+      justify-content: center; /* Memusatkan item CTA secara horizontal */
+      gap: 20px; /* Jarak antar tombol CTA */
     }
     .cta a {
       background: linear-gradient(90deg, #00bfff, #0077ff);
@@ -193,11 +193,32 @@
       font-weight: 600;
       box-shadow: 0 0 25px #00bfffaa;
       transition: 0.3s;
-      display: inline-block;
+      display: inline-flex; /* Menggunakan inline-flex untuk ikon dan teks */
+      align-items: center; /* Memusatkan ikon dan teks secara vertikal */
+      gap: 10px; /* Jarak antara ikon dan teks */
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Tambah shadow teks pada tombol CTA */
     }
     .cta a:hover {
       box-shadow: 0 0 40px #00bffffa;
       transform: scale(1.05);
+    }
+
+    /* Gaya khusus untuk tombol Discord */
+    .cta .discord-button {
+      background: linear-gradient(90deg, #5865F2, #4752C4); /* Warna Discord */
+      box-shadow: 0 0 25px rgba(88, 101, 242, 0.7);
+    }
+    .cta .discord-button:hover {
+      box-shadow: 0 0 40px rgba(88, 101, 242, 0.9);
+    }
+
+    /* Gaya khusus untuk tombol Twitter (X) */
+    .cta .twitter-button {
+      background: linear-gradient(90deg, #1DA1F2, #0C85D0); /* Warna Twitter */
+      box-shadow: 0 0 25px rgba(29, 161, 242, 0.7);
+    }
+    .cta .twitter-button:hover {
+      box-shadow: 0 0 40px rgba(29, 161, 242, 0.9);
     }
     
     footer {
@@ -209,7 +230,7 @@
       font-size: 0.9rem;
       position: relative;
       z-index: 2;
-      background: #14161e; /* Latar belakang footer solid gelap */
+      background: #14161e; 
     }
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
@@ -218,9 +239,10 @@
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* Animasi glowPulse tidak lagi digunakan pada header, namun mungkin pada elemen lain jika ada */
     @keyframes glowPulse {
-      from { box-shadow: 0 0 15px #00bfff33; }
-      to { box-shadow: 0 0 30px #00bfff77; }
+      from { box-shadow: 0 0 15px rgba(0, 191, 255, 0.2); }
+      to { box-shadow: 0 0 30px rgba(0, 191, 255, 0.4); }
     }
   </style>
 </head>
@@ -313,18 +335,16 @@
       </section>
     </div>
 
-    <div class="info-card">
-        <section>
-          <h2>Official Billions Network Channels</h2>
-          <ul>
-            <li><a href="https://x.com/billions_ntwk" target="_blank">🐦 Billions Network on X (Twitter)</a></li>
-            <li><a href="https://discord.gg/billions-ntwk" target="_blank">💬 Billions Network Discord</a></li>
-          </ul>
-        </section>
-    </div>
-
     <section class="cta">
-      <a href="https://discord.gg/billions-ntwk" target="_blank">🚀 Join the Billions Community</a>
+      <a href="https://discord.gg/billions-ntwk" target="_blank" class="discord-button">
+        <i class="fab fa-discord"></i> Join Discord
+      </a>
+      <a href="https://x.com/billions_ntwk" target="_blank" class="twitter-button">
+        <i class="fab fa-x-twitter"></i> Follow on X
+      </a>
+      <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank">
+        🚀 Join the Billions Community
+      </a>
     </section>
   </main>
   
