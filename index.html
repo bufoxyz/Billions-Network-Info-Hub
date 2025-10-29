@@ -109,11 +109,15 @@
       margin-bottom: 1.5rem;
       text-shadow: 0 0 10px #00bfff66;
     }
+    
     /* GAYA KHUSUS SUPER OG TITLE */
     .superog-title {
-        color: #ff0000; 
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
-        border-left: 5px solid #ff0000; 
+        color: #ffffff; /* Warna teks utama H2 adalah putih */
+        border-left: 5px solid #ff0000; /* Border tetap warna merah */
+    }
+    .superog-title .highlight {
+        color: #ff0000; /* Hanya teks ini yang berwarna merah */
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Efek glow Super OG */
     }
 
     /* GAYA KHUSUS INTRO DAN QUOTE */
@@ -126,7 +130,7 @@
         font-size: 1.05rem;
         line-height: 1.6;
         margin-bottom: 20px;
-        text-align: left; /* Teks paragraf tetap rata kiri */
+        text-align: left; 
     }
     .intro-card blockquote {
         border-left: 4px solid #00bfff;
@@ -135,7 +139,6 @@
         font-style: italic;
         color: #a0a0a0;
         max-width: 90%;
-        /* PERBAIKAN UTAMA: Rata tengah untuk menyelaraskan dengan area card */
         text-align: center; 
     }
     .intro-card blockquote footer {
@@ -146,9 +149,8 @@
         background: none;
         border-top: none;
         padding: 0;
-        text-align: center; /* Perataan tengah footer quote */
+        text-align: center; 
     }
-
 
     ul {
       list-style-type: none;
@@ -400,7 +402,7 @@
     
     <div id="super-og-mission" class="info-card">
       <section>
-        <h2 class="superog-title">My @Super OG Mission & Daily Commitment</h2>
+        <h2 class="superog-title">My <span class="highlight">@Super OG</span> Mission & Daily Commitment</h2>
         <p>
             I am committed to demonstrating continuous dedication to the Billions Network. My daily commitment is focused on driving growth and visibility:
         </p>
