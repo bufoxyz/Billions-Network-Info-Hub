@@ -19,6 +19,7 @@
       position: relative;
       overflow-x: hidden;
     }
+    /* AURORA GLOW EFFECT */
     body::before {
       content: "";
       position: fixed;
@@ -44,23 +45,25 @@
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(90deg, #11131a, #161920);
       border-bottom: 1px solid #1f2230;
-      box-shadow: 0 0 25px #00bfff33;
+      /* GLOW HEADER DIPERKUAT */
+      box-shadow: 0 0 25px #00bfff55;
       animation: glowPulse 3s infinite alternate;
     }
     h1 {
-      font-family: 'Montserrat', sans-serif; /* Menggunakan font yang lebih tegas */
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
       background: linear-gradient(90deg, #00bfff, #5a189a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
-      text-shadow: none;
+      /* TEXT SHADOW DIKEMBALIKAN UNTUK KILAUAN */
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.4); 
     }
     header p {
         margin-top: -5px;
     }
-    header p a { /* Gaya untuk tautan X/Twitter di bawah judul */
+    header p a {
         color: #b0b0b0;
         text-decoration: none;
         transition: color 0.2s;
@@ -70,7 +73,7 @@
     }
     header img {
       width: 80px;
-      filter: drop-shadow(0 0 12px #00bfffaa);
+      filter: drop-shadow(0 0 15px #00bfffaa); /* Bayangan logo dipertebal */
       animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
@@ -98,12 +101,12 @@
         border-radius: 12px;
         padding: 25px;
         margin: 25px 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 15px #00bfff08;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px #00bfff15; /* Bayangan Card diperkuat */
         transition: transform 0.3s ease;
     }
     .info-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 20px #00bfff20;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 30px #00bfff30; /* Efek hover diperkuat */
     }
     
     h2 {
@@ -131,7 +134,7 @@
     }
     .role { font-weight: 600; }
     
-    /* 🎨 Role Colors (DISCORD ACCURATE SESUAI SS) */
+    /* 🎨 Role Colors (DISCORD ACCURATE) */
     .genesis { color: #00aaff; }        
     .verified { color: #57f287; }       
     .id { color: #40e0d0; }             
@@ -139,7 +142,10 @@
     .meme { color: #556b2f; }           
     .creator { color: #ff3333; }        
     .raids { color: #ff6347; }          
-    .superog { color: #ff0000; }        
+    .superog { 
+        color: #ff0000;
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Kilauan Merah Super OG */
+    }        
     .og { color: #ffa500; }             
     .realhuman { color: #ff69b4; }      
     .early { color: #9932cc; }          
@@ -166,12 +172,12 @@
       border-radius: 10px;
       color: white;
       font-weight: 600;
-      box-shadow: 0 0 20px #00bfff88;
+      box-shadow: 0 0 25px #00bfffaa; /* Bayangan CTA sangat kuat */
       transition: 0.3s;
       display: inline-block;
     }
     .cta a:hover {
-      box-shadow: 0 0 30px #00bffffa;
+      box-shadow: 0 0 40px #00bffffa;
       transform: scale(1.05);
     }
     
