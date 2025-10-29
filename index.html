@@ -109,11 +109,42 @@
       margin-bottom: 1.5rem;
       text-shadow: 0 0 10px #00bfff66;
     }
-    /* GAYA KHUSUS UNTUK JUDUL SUPER OG */
+
+    /* GAYA KHUSUS INTRO DAN QUOTE */
+    .intro-card {
+        text-align: center;
+        border-left: none;
+        border-right: none;
+    }
+    .intro-card p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .intro-card blockquote {
+        border-left: 4px solid #00bfff;
+        margin: 20px auto 0;
+        padding-left: 15px;
+        font-style: italic;
+        color: #a0a0a0;
+        max-width: 90%;
+        text-align: left;
+    }
+    .intro-card blockquote footer {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9em;
+        color: #7edbff;
+        background: none;
+        border-top: none;
+        padding: 0;
+    }
+
+    /* GAYA KHUSUS SUPER OG TITLE */
     .superog-title {
-        color: #ff0000; /* Warna Super OG */
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Efek glow Super OG */
-        border-left: 5px solid #ff0000; /* Border warna Super OG */
+        color: #ff0000; 
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
+        border-left: 5px solid #ff0000; 
     }
 
     ul {
@@ -266,6 +297,19 @@
   </header>
   
   <main>
+    <div class="info-card intro-card">
+      <section>
+        <p>
+            **Welcome to the Billions Network!** We're building a vibrant, **decentralized community** that sits at the intersection of Human creativity and AI innovation. Think of us as the digital hub where the smartest humans collaborate with cutting-edge AI to shape the future of identity and technology. It's not just a network; it's a launchpad for the next generation of **decentralized pioneers**. Join the mission, claim your role, and let's build something truly massive together!
+        </p>
+
+        <blockquote>
+            "Verified ones are not created for separation, but rather to unite."
+            <footer>— by dbdoo</footer>
+        </blockquote>
+      </section>
+    </div>
+
     <div id="claimable-roles" class="info-card">
       <section>
         <h2>Claimable Roles</h2>
@@ -311,7 +355,7 @@
             <li>Joined Discord — <strong>March 25, 2025</strong></li>
             <li>First interaction & introduction — <a href="https://discord.com/channels/1347581046442688553/1351538390012788837/1355677345108988077" target="_blank">March 30, 2025</a></li>
             <li>Contributed content on X about Billions — <a href="https://discord.com/channels/1347581046442688553/1353336758808477736/1407170570239610931" target="_blank">August 19, 2025</a></li>
-            </ul>
+        </ul>
         <p>
             You can verify my recent activity and creative work by monitoring my X profile: <a href="https://x.com/Redd660" target="_blank">https://x.com/Redd660</a>
         </p>
@@ -376,6 +420,7 @@
         <i class="fab fa-x-twitter"></i> Follow on X
       </a>
       
+
 <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank" class="airdrop-button">
         <i class="fas fa-gift"></i> Join Airdrop Billions
       </a>
