@@ -7,10 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   
   <style>
-    /* soft animated glow background */
+    /* Latar Belakang Menggunakan Gambar Anda */
     body {
-      background: radial-gradient(circle at top, #0f1117, #05060a);
-      color: #d4d4dc;
+      background-image: url('background-billions.jpg'); /* Ganti dengan nama file gambar Anda */
+      background-size: cover; /* Pastikan gambar menutupi seluruh area */
+      background-position: center center; /* Posisikan di tengah */
+      background-attachment: fixed; /* Gambar tetap saat discroll */
+      background-repeat: no-repeat; /* Gambar tidak berulang */
+      
+      color: #d4d4dc; /* Warna teks default, bisa disesuaikan jika perlu */
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
@@ -19,20 +24,12 @@
       position: relative;
       overflow-x: hidden;
     }
-    /* AURORA GLOW EFFECT */
+    
+    /* Efek Aurora Glow Dihilangkan karena menggunakan gambar latar belakang */
     body::before {
-      content: "";
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 30%, rgba(0,191,255,0.05), transparent 70%),
-                  radial-gradient(circle at 70% 70%, rgba(255,0,255,0.05), transparent 70%);
-      animation: aurora 20s linear infinite alternate;
-      z-index: 0;
+      content: none; /* Menghilangkan pseudo-element yang membuat aurora */
     }
-    @keyframes aurora {
+    @keyframes aurora { /* Animasi aurora tidak lagi relevan */
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
@@ -43,9 +40,8 @@
       z-index: 2;
       text-align: center;
       padding: 3rem 1rem 2rem 1rem;
-      background: linear-gradient(90deg, #11131a, #161920);
+      background: rgba(17, 19, 26, 0.9); /* Ubah latar belakang header menjadi semi-transparan agar gambar latar terlihat */
       border-bottom: 1px solid #1f2230;
-      /* GLOW HEADER DIPERKUAT */
       box-shadow: 0 0 25px #00bfff55;
       animation: glowPulse 3s infinite alternate;
     }
@@ -57,7 +53,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
-      /* TEXT SHADOW DIKEMBALIKAN UNTUK KILAUAN */
       text-shadow: 0 0 10px rgba(0, 191, 255, 0.4); 
     }
     header p {
@@ -73,7 +68,7 @@
     }
     header img {
       width: 80px;
-      filter: drop-shadow(0 0 15px #00bfffaa); /* Bayangan logo dipertebal */
+      filter: drop-shadow(0 0 15px #00bfffaa);
       animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
@@ -96,7 +91,7 @@
     
     /* Gaya Card (info-card) */
     .info-card {
-        background: rgba(20, 22, 30, 0.9);
+        background: rgba(20, 22, 30, 0.9); /* Tetap gelap agar mudah dibaca di atas gambar latar */
         border: 1px solid #1e2430;
         border-radius: 12px;
         padding: 25px;
@@ -162,11 +157,11 @@
 
     /* GAYA KHUSUS AIRDROP */
     .airdrop-card h2 {
-      border-left: 5px solid #ffaa00; /* Warna oranye/kuning untuk membedakan */
+      border-left: 5px solid #ffaa00;
       text-shadow: 0 0 10px #ffaa0066;
     }
     .airdrop-card .reward {
-      color: #57f287; /* Hijau (Verified) */
+      color: #57f287;
       font-weight: 600;
     }
     .airdrop-card ul {
@@ -207,6 +202,7 @@
       font-size: 0.9rem;
       position: relative;
       z-index: 2;
+      background: rgba(20, 22, 30, 0.9); /* Latar belakang footer semi-transparan */
     }
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
