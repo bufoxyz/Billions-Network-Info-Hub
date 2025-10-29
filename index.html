@@ -109,6 +109,12 @@
       margin-bottom: 1.5rem;
       text-shadow: 0 0 10px #00bfff66;
     }
+    /* GAYA KHUSUS SUPER OG TITLE */
+    .superog-title {
+        color: #ff0000; 
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
+        border-left: 5px solid #ff0000; 
+    }
 
     /* GAYA KHUSUS INTRO DAN QUOTE */
     .intro-card {
@@ -120,6 +126,7 @@
         font-size: 1.05rem;
         line-height: 1.6;
         margin-bottom: 20px;
+        text-align: left; /* Teks paragraf tetap rata kiri */
     }
     .intro-card blockquote {
         border-left: 4px solid #00bfff;
@@ -128,7 +135,8 @@
         font-style: italic;
         color: #a0a0a0;
         max-width: 90%;
-        text-align: left;
+        /* PERBAIKAN UTAMA: Rata tengah untuk menyelaraskan dengan area card */
+        text-align: center; 
     }
     .intro-card blockquote footer {
         display: block;
@@ -138,14 +146,9 @@
         background: none;
         border-top: none;
         padding: 0;
+        text-align: center; /* Perataan tengah footer quote */
     }
 
-    /* GAYA KHUSUS SUPER OG TITLE */
-    .superog-title {
-        color: #ff0000; 
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
-        border-left: 5px solid #ff0000; 
-    }
 
     ul {
       list-style-type: none;
@@ -292,7 +295,7 @@
     <img src="logo-billions.png" alt="Billions Network Logo" />
     <h1>Billions Network Info Hub</h1>
     <p>
-        <a href="https://x.com/Redd660" target="_blank">by @Redd660</a>
+        <a href="https://x.com/Redd660" target="_blank">by dbdoo</a>
     </p>
   </header>
   
@@ -300,7 +303,7 @@
     <div class="info-card intro-card">
       <section>
         <p>
-            **Welcome to the Billions Network!** We're building a vibrant, **decentralized community** that sits at the intersection of Human creativity and AI innovation. Think of us as the digital hub where the smartest humans collaborate with cutting-edge AI to shape the future of identity and technology. It's not just a network; it's a launchpad for the next generation of **decentralized pioneers**. Join the mission, claim your role, and let's build something truly massive together!
+            Welcome to the Billions Network! We're building a vibrant, <strong>decentralized community</strong> that sits at the intersection of Human creativity and AI innovation. Think of us as the digital hub where the smartest humans collaborate with cutting-edge AI to shape the future of identity and technology. It's not just a network; it's a launchpad for the next generation of <strong>decentralized pioneers</strong>. Join the mission, claim your role, and let's build something truly massive together!
         </p>
 
         <blockquote>
@@ -402,7 +405,7 @@
             I am committed to demonstrating continuous dedication to the Billions Network. My daily commitment is focused on driving growth and visibility:
         </p>
         <ul class="contribution-list">
-            <li><i class="fas fa-pen-nib"></i> I pledge to **post and create content daily** about Billions Network on X.</li>
+            <li><i class="fas fa-pen-nib"></i> I pledge to <strong>post and create content daily</strong> about Billions Network on X.</li>
             <li><i class="fas fa-users"></i> I commit to engaging with new members and actively boosting community morale.</li>
             <li><i class="fas fa-chart-line"></i> I will constantly monitor community sentiment and share actionable feedback with the team.</li>
         </ul>
@@ -416,7 +419,7 @@
       <a href="https://discord.gg/billions-ntwk" target="_blank" class="discord-button">
         <i class="fab fa-discord"></i> Join Discord
       </a>
-      <a href="https://x.com/billions_ntwk" target="_blank" class="twitter-button">
+      <a href="https://x.com/billions-ntwk" target="_blank" class="twitter-button">
         <i class="fab fa-x-twitter"></i> Follow on X
       </a>
       
