@@ -9,63 +9,103 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalH2Vd+c81v6S3p99pWvGq+jK2p7v4yK2v+s0PjE0gL+k9m6+2y/sK+jJ+d+b+P+j8g+Q+q+q+xQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
+    /* --- Latar Belakang: Aurora Glow Asli (DIKEMBALIKAN) --- */
     html { scroll-behavior: smooth; }
-    
-    body::after { content: none; }
+    body::after { content: none; } /* Hapus overlay */
 
-    /* Latar Belakang Menggunakan Gambar Anda */
     body {
-      background-image: url('background-billions.jpg'); 
-      background-size: cover; 
-      background-position: center center; 
-      background-attachment: fixed; 
-      background-repeat: no-repeat; 
-      
-      color: #d4d4dc;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: left;
-      animation: fadeIn 1.2s ease-in-out;
-      position: relative;
-      overflow-x: hidden;
+        background: radial-gradient(circle at top, #0f1117, #05060a);
+        color: #d4d4dc;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        animation: fadeIn 1.2s ease-in-out;
+        position: relative;
+        overflow-x: hidden;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 30% 30%, rgba(0,191,255,0.05), transparent 70%),
+                    radial-gradient(circle at 70% 70%, rgba(255,0,255,0.05), transparent 70%);
+        animation: aurora 20s linear infinite alternate;
+        z-index: 0;
+    }
+    @keyframes aurora {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
     }
     
-    body::before { content: none; }
-    
-    /* Header (Biru Solid & Tajam) */
+    /* --- GAYA BARU UNTUK STICKER MENGGANTUNG --- */
+    .sticker-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; 
+        z-index: 10; 
+    }
+
+    .sticker {
+        position: absolute;
+        width: 80px; 
+        opacity: 0.9;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        transition: transform 0.5s ease-out; 
+        animation: slowFloat 8s infinite ease-in-out alternate; 
+    }
+
+    /* Posisi dan ukuran spesifik untuk 5 stiker */
+    #sticker-1 { top: 15%; left: 5%; width: 90px; }
+    #sticker-2 { top: 40%; right: 10%; width: 70px; animation-delay: 1s; }
+    #sticker-3 { bottom: 10%; left: 20%; width: 60px; animation-duration: 6s; }
+    #sticker-4 { top: 5%; right: 40%; width: 100px; animation-delay: 2s; }
+    #sticker-5 { bottom: 30%; right: 5%; width: 85px; animation-duration: 9s; }
+
+    @keyframes slowFloat {
+        from { transform: translate(0, 0) rotate(0deg); }
+        to { transform: translate(10px, 15px) rotate(3deg); }
+    }
+    /* ----------------------------------------- */
+
+    /* Header (Gaya Glow Asli) */
     header {
       position: relative;
-      z-index: 2;
+      z-index: 20; 
       text-align: center;
       padding: 3rem 1rem 2rem 1rem;
-      background: #0077FF; 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      animation: none; 
+      background: linear-gradient(90deg, #11131a, #161920); 
+      border-bottom: 1px solid #1f2230; 
+      box-shadow: 0 0 25px #00bfff55;
+      animation: glowPulse 3s infinite alternate; 
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
-      color: #ffffff; 
-      background: none; 
-      -webkit-background-clip: unset;
-      -webkit-text-fill-color: unset;
+      background: linear-gradient(90deg, #00bfff, #8a2be2); 
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-top: 0.5rem;
-      text-shadow: none; 
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.4); 
     }
     header p { margin-top: -5px; }
     header p a {
-        color: #ffffff;
+        color: #b0b0b0;
         text-decoration: none;
         transition: color 0.2s;
         text-shadow: none; 
     }
-    header p a:hover { color: #e0e0e0; }
+    header p a:hover { color: #00bfff; }
     header img {
       width: 80px;
-      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(0 0 12px #00bfffaa);
       animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
@@ -76,7 +116,7 @@
     /* Struktur Card */
     main {
       position: relative;
-      z-index: 2;
+      z-index: 20; 
       max-width: 800px;
       margin: 2rem auto;
       padding: 0; 
@@ -88,7 +128,7 @@
     
     /* Gaya Card (info-card): Kontras SOLID */
     .info-card {
-        background: #14161e; 
+        background: rgba(20, 22, 30, 0.9); 
         border: 1px solid #1e2430;
         border-radius: 12px;
         padding: 25px;
@@ -109,15 +149,15 @@
       margin-bottom: 1.5rem;
       text-shadow: 0 0 10px #00bfff66;
     }
-    
+
     /* GAYA KHUSUS SUPER OG TITLE */
     .superog-title {
-        color: #ffffff; /* Warna teks utama H2 adalah putih */
-        border-left: 5px solid #ff0000; /* Border tetap warna merah */
+        color: #ffffff; 
+        border-left: 5px solid #ff0000; 
     }
     .superog-title .highlight {
-        color: #ff0000; /* Hanya teks ini yang berwarna merah */
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Efek glow Super OG */
+        color: #ff0000; 
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
     }
 
     /* GAYA KHUSUS INTRO DAN QUOTE */
@@ -152,147 +192,65 @@
         text-align: center; 
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0.5rem 0 1rem 0;
-    }
-    li { 
-        margin: 0.8rem 0;
-        padding: 4px 0;
-        transition: background 0.2s, padding-left 0.2s;
-    }
-    li:hover {
-        background: rgba(255, 255, 255, 0.05);
-        padding-left: 10px;
-        border-radius: 4px;
-    }
+    ul { list-style-type: none; padding: 0; margin: 0.5rem 0 1rem 0; }
+    li { padding: 4px 0; transition: background 0.2s, padding-left 0.2s; }
+    li:hover { background: rgba(255, 255, 255, 0.05); padding-left: 10px; border-radius: 4px; }
     .role { font-weight: 600; }
-    
+
     /* 🎨 Role Colors (DISCORD ACCURATE) */
-    .genesis { color: #00aaff; }        
-    .verified { color: #57f287; }       
-    .id { color: #40e0d0; }             
-    .beta { color: #ff69b4; }           
-    .meme { color: #556b2f; }           
-    .creator { color: #ff3333; }        
-    .raids { color: #ff6347; }          
-    .superog { 
-        color: #ff0000;
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
-    }        
-    .og { color: #ffa500; }             
-    .realhuman { color: #ff69b4; }      
-    .early { color: #9932cc; }          
-    
-    a {
-      color: #00bfff;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    a:hover {
-      color: #7edbff;
-      text-shadow: 0 0 8px #00bfff;
-    }
+    .genesis { color: #00aaff; } .verified { color: #57f287; } .id { color: #40e0d0; } .beta { color: #ff69b4; } .meme { color: #556b2f; } .creator { color: #ff3333; } .raids { color: #ff6347; } 
+    .superog { color: #ff0000; text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); } 
+    .og { color: #ffa500; } .realhuman { color: #ff69b4; } .early { color: #9932cc; }          
+
+    a { color: #00bfff; text-decoration: none; transition: 0.2s; }
+    a:hover { color: #7edbff; text-shadow: 0 0 8px #00bfff; }
 
     /* GAYA KHUSUS AIRDROP */
-    .airdrop-card h2 {
-      border-left: 5px solid #ffaa00;
-      text-shadow: 0 0 10px #ffaa0066;
-    }
-    .airdrop-card .reward {
-      color: #57f287;
-      font-weight: 600;
-    }
-    .airdrop-card ul {
-      list-style-type: '➡️ ';
-      padding-left: 1.5rem;
-    }
-    .airdrop-card li {
-      margin: 10px 0;
-    }
+    .airdrop-card h2 { border-left: 5px solid #ffaa00; text-shadow: 0 0 10px #ffaa0066; }
+    .airdrop-card .reward { color: #57f287; font-weight: 600; }
+    .airdrop-card ul { list-style-type: '➡️ '; padding-left: 1.5rem; }
+    .airdrop-card li { margin: 10px 0; }
 
     /* GAYA BARU UNTUK KONTRIBUSI */
-    .contribution-list {
-        list-style-type: '🔗 ';
-        padding-left: 1.5rem;
-    }
-    .contribution-list li {
-        margin: 15px 0;
-        font-size: 0.95rem;
-    }
-    
+    .contribution-list { list-style-type: '🔗 '; padding-left: 1.5rem; }
+    .contribution-list li { margin: 15px 0; font-size: 0.95rem; }
+
     /* Gaya CTA yang lebih kuat */
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      display: flex; 
-      flex-wrap: wrap; 
-      justify-content: center; 
-      gap: 20px; 
-    }
-    .cta a {
-      background: linear-gradient(90deg, #00bfff, #0077ff);
-      padding: 14px 30px;
-      border-radius: 10px;
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 0 25px #00bfffaa;
-      transition: 0.3s;
-      display: inline-flex; 
-      align-items: center; 
-      gap: 10px; 
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
-    }
-    .cta a:hover {
-      box-shadow: 0 0 40px #00bffffa;
-      transform: scale(1.05);
-    }
+    .cta { text-align: center; margin-top: 3rem; margin-bottom: 3rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .cta a { background: linear-gradient(90deg, #00bfff, #0077ff); padding: 14px 30px; border-radius: 10px; color: white; font-weight: 600; box-shadow: 0 0 25px #00bfffaa; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+    .cta a:hover { box-shadow: 0 0 40px #00bffffa; transform: scale(1.05); }
 
-    /* Gaya khusus untuk tombol Discord */
-    .cta .discord-button {
-      background: linear-gradient(90deg, #5865F2, #4752C4); 
-      box-shadow: 0 0 25px rgba(88, 101, 242, 0.7);
-    }
-    .cta .discord-button:hover {
-      box-shadow: 0 0 40px rgba(88, 101, 242, 0.9);
-    }
-
-    /* Gaya khusus untuk tombol Twitter (X) */
-    .cta .twitter-button {
-      background: linear-gradient(90deg, #1DA1F2, #0C85D0); 
-      box-shadow: 0 0 25px rgba(29, 161, 242, 0.7);
-    }
-    .cta .twitter-button:hover {
-      box-shadow: 0 0 40px rgba(29, 161, 242, 0.9);
-    }
+    .cta .discord-button { background: linear-gradient(90deg, #5865F2, #4752C4); box-shadow: 0 0 25px rgba(88, 101, 242, 0.7); }
+    .cta .discord-button:hover { box-shadow: 0 0 40px rgba(88, 101, 242, 0.9); }
+    .cta .twitter-button { background: linear-gradient(90deg, #1DA1F2, #0C85D0); box-shadow: 0 0 25px rgba(29, 161, 242, 0.7); }
+    .cta .twitter-button:hover { box-shadow: 0 0 40px rgba(29, 161, 242, 0.9); }
 
     /* NAVIGASI SISI DIHAPUS */
     #side-nav { display: none; }
-    
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #888;
-      border-top: 1px solid #1f2230;
-      margin-top: 0;
-      font-size: 0.9rem;
-      position: relative;
-      z-index: 2;
-      background: #14161e; 
-    }
+
+    footer { text-align: center; padding: 2rem 1rem; color: #888; border-top: 1px solid #1f2230; margin-top: 0; font-size: 0.9rem; position: relative; z-index: 20; background: #14161e; }
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
-    
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glowPulse {
+        from { box-shadow: 0 0 15px #00bfff33; }
+        to { box-shadow: 0 0 30px #00bfff77; }
     }
   </style>
 </head>
 <body>
-
+  
+  <div class="sticker-container">
+    <img src="sticker-1.png" id="sticker-1" class="sticker" alt="Sticker 1"/>
+    <img src="sticker-2.png" id="sticker-2" class="sticker" alt="Sticker 2"/>
+    <img src="sticker-3.png" id="sticker-3" class="sticker" alt="Sticker 3"/>
+    <img src="sticker-4.png" id="sticker-4" class="sticker" alt="Sticker 4"/>
+    <img src="sticker-5.png" id="sticker-5" class="sticker" alt="Sticker 5"/>
+  </div>
   <header>
     <img src="logo-billions.png" alt="Billions Network Logo" />
     <h1>Billions Network Info Hub</h1>
@@ -425,7 +383,6 @@
         <i class="fab fa-x-twitter"></i> Follow on X
       </a>
       
-
 <a href="https://signup.billions.network?rc=WQROTQLC" target="_blank" class="airdrop-button">
         <i class="fas fa-gift"></i> Join Airdrop Billions
       </a>
