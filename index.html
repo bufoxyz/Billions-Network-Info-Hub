@@ -94,17 +94,25 @@
         justify-content: center;
         margin-top: 20px;
     }
-    .proof-gallery img {
-        width: 100%;
+    .proof-gallery a { /* Gaya untuk link gambar */
+        display: block;
         max-width: 150px;
-        height: auto;
         border-radius: 8px;
         border: 2px solid #00bfff;
         box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
         transition: transform 0.3s;
+        text-decoration: none; /* Hilangkan underline pada link */
     }
-    .proof-gallery img:hover {
+    .proof-gallery a:hover {
         transform: scale(1.05);
+        text-shadow: none; /* Hapus text shadow pada hover link */
+    }
+
+    .proof-gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px; /* Lebih kecil dari border luar */
+        display: block; /* Hapus whitespace di bawah gambar */
     }
     
     /* Gaya CTA yang lebih kuat */
@@ -123,7 +131,7 @@
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { transform: translateY(0); } }
     @keyframes glowPulse { from { box-shadow: 0 0 15px #00bfff33; } to { box-shadow: 0 0 30px #00bfff77; } }
   </style>
 </head>
@@ -210,9 +218,15 @@
         
         <p><strong>Visual Proofs (Click to Enlarge):</strong></p>
         <div class="proof-gallery">
-            <img src="ss-profile-roles.png" alt="My Discord Profile with Super OG Role"/>
-            <img src="ss-gojou-nomination.png" alt="Nomination for Super OG by Gojou_24/7"/>
-            <img src="ss-javi-grant.png" alt="Super OG Grant Message from Javi"/>
+            <a href="ss-profile-roles.png" target="_blank">
+                <img src="ss-profile-roles.png" alt="My Discord Profile with Super OG Role"/>
+            </a>
+            <a href="ss-gojou-nomination.png" target="_blank">
+                <img src="ss-gojou-nomination.png" alt="Nomination for Super OG by Gojou_24/7"/>
+            </a>
+            <a href="ss-javi-grant.png" target="_blank">
+                <img src="ss-javi-grant.png" alt="Super OG Grant Message from Javi"/>
+            </a>
         </div>
 
         <p style="margin-top: 20px;">
