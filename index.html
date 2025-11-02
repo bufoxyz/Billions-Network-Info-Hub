@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalH2Vd+c81v6S3p99pWvGq+jK2p7v4yK2v+s0PjE0gL+k9m6+2y/sK+jJ+d+b+P+j8g+Q+q+q+xQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
-    /* --- Latar Belakang: Menggunakan Gambar background-billions.jpg --- */
+    /* --- CSS SAMA SEPERTI SEBELUMNYA --- */
     html { scroll-behavior: smooth; }
     body::after { content: none; } 
 
@@ -35,7 +35,6 @@
         to { transform: rotate(360deg); }
     }
     
-    /* --- GAYA STICKER MENGGANTUNG DENGAN TALI (SWING) --- */
     .sticker-container {
         position: fixed;
         top: 0;
@@ -51,151 +50,51 @@
         width: 80px; 
         opacity: 0.95;
         filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.6));
-        transform-origin: top center; /* Titik putar di bagian atas */
-        animation: swing 3s ease-in-out alternate infinite; /* Animasi ayunan */
+        transform-origin: top center; 
+        animation: swing 3s ease-in-out alternate infinite; 
     }
 
-    /* POSISI DIPERBAIKI: Stiker 2 dipindah ke kiri atas (2% dari kiri) */
     #sticker-1 { top: 5px; left: 15%; width: 70px; transform: rotate(-5deg); animation-delay: 0.5s; }
-    #sticker-2 { top: 15px; left: 2%; width: 85px; transform: rotate(3deg); animation-duration: 4s; } /* POSISI BARU */
+    #sticker-2 { top: 15px; left: 2%; width: 85px; transform: rotate(3deg); animation-duration: 4s; } 
     #sticker-3 { top: 0px; right: 20%; width: 65px; transform: rotate(10deg); animation-delay: 1.5s; }
     #sticker-4 { top: 25px; right: 5%; width: 95px; transform: rotate(-2deg); animation-duration: 3.5s; }
-    #sticker-5 { top: 10px; right: 40%; width: 55px; transform: rotate(5deg); animation-duration: 5s; animation-delay: 2s; } /* POSISI BARU AGAR TIDAK MENGGANGGU */
+    #sticker-5 { top: 10px; right: 40%; width: 55px; transform: rotate(5deg); animation-duration: 5s; animation-delay: 2s; } 
 
     @keyframes swing {
         0% { transform: rotate(-1deg); }
-        100% { transform: rotate(3deg); } /* Ayunan ringan */
+        100% { transform: rotate(3deg); } 
     }
-    /* ----------------------------------------- */
 
-    /* Header (Biru Solid & Tajam) */
-    header {
-      position: relative;
-      z-index: 20; 
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-      background: #0077FF; 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      animation: none; 
-    }
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #ffffff; 
-      background: none; 
-      -webkit-background-clip: unset;
-      -webkit-text-fill-color: unset;
-      margin-top: 0.5rem;
-      text-shadow: none; 
-    }
+    header { position: relative; z-index: 20; text-align: center; padding: 3rem 1rem 2rem 1rem; background: #0077FF; border-bottom: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); animation: none; }
+    h1 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 700; color: #ffffff; background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset; margin-top: 0.5rem; text-shadow: none; }
     header p { margin-top: -5px; }
-    header p a {
-        color: #ffffff;
-        text-decoration: none;
-        transition: color 0.2s;
-        text-shadow: none; 
-    }
+    header p a { color: #ffffff; text-decoration: none; transition: color 0.2s; text-shadow: none; }
     header p a:hover { color: #e0e0e0; }
-    header img {
-      width: 80px;
-      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+    header img { width: 80px; filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
     
-    /* Struktur Card */
-    main {
-      position: relative;
-      z-index: 20; 
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0; 
-      background: none; 
-      border-radius: 16px;
-      box-shadow: none;
-      border: none;
-    }
+    main { position: relative; z-index: 20; max-width: 800px; margin: 2rem auto; padding: 0; background: none; border-radius: 16px; box-shadow: none; border: none; }
     
-    /* Gaya Card (info-card): Kontras SOLID */
-    .info-card {
-        background: #14161e; 
-        border: 1px solid #1e2430;
-        border-radius: 12px;
-        padding: 25px;
-        margin: 25px 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px #00bfff15; 
-        transition: transform 0.3s ease;
-    }
-    .info-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 30px #00bfff30; 
-    }
+    .info-card { background: #14161e; border: 1px solid #1e2430; border-radius: 12px; padding: 25px; margin: 25px 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px #00bfff15; transition: transform 0.3s ease; }
+    .info-card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 30px #00bfff30; }
     
-    h2 {
-      color: #ffffff;
-      border-left: 5px solid #00bfff;
-      padding-left: 0.8rem;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px #00bfff66;
-    }
+    h2 { color: #ffffff; border-left: 5px solid #00bfff; padding-left: 0.8rem; margin-top: 0; margin-bottom: 1.5rem; text-shadow: 0 0 10px #00bfff66; }
+    .superog-title { color: #ffffff; border-left: 5px solid #ff0000; }
+    .superog-title .highlight { color: #ff0000; text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); }
 
-    /* GAYA KHUSUS SUPER OG TITLE */
-    .superog-title {
-        color: #ffffff; 
-        border-left: 5px solid #ff0000; 
-    }
-    .superog-title .highlight {
-        color: #ff0000; 
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); 
-    }
-
-    /* GAYA KHUSUS INTRO DAN QUOTE */
-    .intro-card {
-        text-align: center;
-        border-left: none;
-        border-right: none;
-    }
-    .intro-card p {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        text-align: left; 
-    }
-    .intro-card blockquote {
-        border-left: 4px solid #00bfff;
-        margin: 20px auto 0;
-        padding-left: 15px;
-        font-style: italic;
-        color: #a0a0a0;
-        max-width: 90%;
-        text-align: center; 
-    }
-    .intro-card blockquote footer {
-        display: block;
-        margin-top: 5px;
-        font-size: 0.9em;
-        color: #7edbff;
-        background: none;
-        border-top: none;
-        padding: 0;
-        text-align: center; 
-    }
+    .intro-card { text-align: center; border-left: none; border-right: none; }
+    .intro-card p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; text-align: left; }
+    .intro-card blockquote { border-left: 4px solid #00bfff; margin: 20px auto 0; padding-left: 15px; font-style: italic; color: #a0a0a0; max-width: 90%; text-align: center; }
+    .intro-card blockquote footer { display: block; margin-top: 5px; font-size: 0.9em; color: #7edbff; background: none; border-top: none; padding: 0; text-align: center; }
 
     ul { list-style-type: none; padding: 0; margin: 0.5rem 0 1rem 0; }
     li { padding: 4px 0; transition: background 0.2s, padding-left 0.2s; }
     li:hover { background: rgba(255, 255, 255, 0.05); padding-left: 10px; border-radius: 4px; }
     .role { font-weight: 600; }
-
+    
     /* 🎨 Role Colors */
     .genesis { color: #00aaff; } .verified { color: #57f287; } .id { color: #40e0d0; } .beta { color: #ff69b4; } .meme { color: #556b2f; } .creator { color: #ff3333; } .raids { color: #ff6347; } 
-    .superog { color: #ff0000; text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); } 
-    .og { color: #ffa500; } .realhuman { color: #ff69b4; } .early { color: #9932cc; }          
+    .superog { color: #ff0000; text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); } .og { color: #ffa500; } .realhuman { color: #ff69b4; } .early { color: #9932cc; }          
 
     a { color: #00bfff; text-decoration: none; transition: 0.2s; }
     a:hover { color: #7edbff; text-shadow: 0 0 8px #00bfff; }
@@ -209,7 +108,28 @@
     /* GAYA BARU UNTUK KONTRIBUSI */
     .contribution-list { list-style-type: '🔗 '; padding-left: 1.5rem; }
     .contribution-list li { margin: 15px 0; font-size: 0.95rem; }
-
+    
+    /* Tampilan galeri kecil untuk bukti SS */
+    .proof-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .proof-gallery img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 8px;
+        border: 2px solid #00bfff;
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+        transition: transform 0.3s;
+    }
+    .proof-gallery img:hover {
+        transform: scale(1.05);
+    }
+    
     /* Gaya CTA yang lebih kuat */
     .cta { text-align: center; margin-top: 3rem; margin-bottom: 3rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .cta a { background: linear-gradient(90deg, #00bfff, #0077ff); padding: 14px 30px; border-radius: 10px; color: white; font-weight: 600; box-shadow: 0 0 25px #00bfffaa; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
@@ -220,21 +140,14 @@
     .cta .twitter-button { background: linear-gradient(90deg, #1DA1F2, #0C85D0); box-shadow: 0 0 25px rgba(29, 161, 242, 0.7); }
     .cta .twitter-button:hover { box-shadow: 0 0 40px rgba(29, 161, 242, 0.9); }
 
-    /* NAVIGASI SISI DIHAPUS */
     #side-nav { display: none; }
 
     footer { text-align: center; padding: 2rem 1rem; color: #888; border-top: 1px solid #1f2230; margin-top: 0; font-size: 0.9rem; position: relative; z-index: 20; background: #14161e; }
     p { margin: 0.6rem 0; }
     strong { color: #fff; }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes glowPulse {
-        from { box-shadow: 0 0 15px #00bfff33; }
-        to { box-shadow: 0 0 30px #00bfff77; }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glowPulse { from { box-shadow: 0 0 15px #00bfff33; } to { box-shadow: 0 0 30px #00bfff77; } }
   </style>
 </head>
 <body>
@@ -308,14 +221,25 @@
     
     <div id="verified-contributions" class="info-card">
       <section>
-        <h2>My Verified Contributions</h2>
-        <p>This section documents key moments and efforts demonstrating active contribution to the Billions Network community:</p>
+        <h2>My Verified Journey & Achievements</h2>
+        
+        <p>This section highlights my recognition and the key persons involved in my journey:</p>
         <ul class="contribution-list">
+            <li>Nominated for Super OG by fellow pioneer, <strong>Goujou_24/7</strong> (<a href="https://x.com/MarinKtgwxxx" target="_blank">@MarinKtgwxxx</a>).</li>
+            <li>Role granted by moderator <strong>Javi .eth</strong> (<a href="https://x.com/jgonzalezferrer" target="_blank">@jgonzalezferrer</a>) as a sign of respect for my consistent work.</li>
             <li>Joined Discord — <strong>March 25, 2025</strong></li>
-            <li>First interaction & introduction — <a href="https://discord.com/channels/1347581046442688553/1351538390012788837/1355677345108988077" target="_blank">March 30, 2025</a></li>
             <li>Contributed content on X about Billions — <a href="https://discord.com/channels/1347581046442688553/1353336758808477736/1407170570239610931" target="_blank">August 19, 2025</a></li>
         </ul>
-        <p>
+        
+        <p><strong>Visual Proofs:</strong></p>
+        <div class="proof-gallery">
+            <img src="chrome_apWg4PanCD.jpg" alt="My Discord Profile with Super OG Role"/>
+            <img src="image_6028b1.jpg" alt="Nomination for Super OG by Gojou_24/7"/>
+            <img src="chrome_7Ze55Feij9.png" alt="Super OG Grant Message from Javi"/>
+            <img src="https://bufoxyz.github.io/Billions-Network-Info-Hub/logo-billions.png" alt="My Discord Profile with Roles"/>
+        </div>
+
+        <p style="margin-top: 20px;">
             You can verify my recent activity and creative work by monitoring my X profile: <a href="https://x.com/Redd660" target="_blank">https://x.com/Redd660</a>
         </p>
       </section>
