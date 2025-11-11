@@ -95,24 +95,24 @@
         margin-top: 20px;
     }
     .proof-gallery a { 
-        display: block;
-        max-width: 150px;
-        border-radius: 8px;
-        border: 2px solid #00bfff;
-        box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
-        transition: transform 0.3s;
-        text-decoration: none; 
+        display: block; max-width: 150px; border-radius: 8px; border: 2px solid #00bfff; box-shadow: 0 0 10px rgba(0, 191, 255, 0.4); transition: transform 0.3s; text-decoration: none; 
     }
     .proof-gallery a:hover {
-        transform: scale(1.05);
-        text-shadow: none;
+        transform: scale(1.05); text-shadow: none;
     }
 
-    .proof-gallery img {
-        width: 100%;
-        height: auto;
-        border-radius: 6px; 
-        display: block;
+    .proof-gallery img { width: 100%; height: auto; border-radius: 6px; display: block; }
+
+    /* GAYA BARU UNTUK PROGRES DI KANAN (ARTS & CRAFTS) */
+    .progress-item {
+        display: flex;
+        justify-content: space-between; /* Memisahkan item ke kiri dan kanan */
+        align-items: center;
+    }
+    .status-icon {
+        color: #57f287; /* Hijau Ceklis */
+        margin-left: 10px;
+        font-size: 1.1em;
     }
     
     /* Gaya CTA yang lebih kuat */
@@ -227,7 +227,7 @@
       <section>
         <h2>My Verified Journey & Achievements</h2>
         
-        <p>This section highlights my recognition and the key persons involved in my journey, including moderator <strong><a href="https://x.com/jgonzalezferrer" target="_blank">Javi .eth</a></strong> for granting my role, and thanks to all pioneers who nominated me:</p>
+        <p>This section highlights my recognition and the key persons involved in my journey:</p>
         <ul class="contribution-list">
             <li>Role granted by moderator <strong><a href="https://x.com/jgonzalezferrer" target="_blank">Javi .eth</a></strong> as a sign of respect for my consistent work.</li>
             <li>Nominated for Super OG by fellow pioneer, <strong><a href="https://x.com/MarinKtgwxxx" target="_blank">Goujou_24/7</a></strong>, and many others in the community.</li>
@@ -246,8 +246,6 @@
             <a href="ss-gojou-nomination.png" target="_blank">
                 <img src="ss-gojou-nomination.png" alt="Nomination for Super OG by Gojou_24/7"/>
             </a>
-            
-
 </div>
 
         <p style="margin-top: 20px;">
@@ -295,17 +293,32 @@
             <p>
                 I believe strongly in building the Billions brand through real-world creative outreach. If I am fortunate enough to have the means and time, I commit to creating the following items specifically for the community and for promoting Billions:
             </p>
-            <ul class="contribution-list" style="list-style-type: '🧵 ';">
-                <li>T-shirts with my own designs</li>
-                <li>✅ Drawing supplies</li>
-                <li>✅ Kites with the Billions logo that I'll be flying</li>
-                <li>Billions logo stickers and hangers</li>
+            <ul class="contribution-list" style="list-style-type: none; padding-left: 0;">
+                
+                <li class="progress-item">
+                    <span class="progress-item-text"><span style="list-style-type: '🧵 '; margin-right: 10px;">🧵</span>T-shirts with my own designs</span>
+                    </li>
+                
+                <li class="progress-item">
+                    <span class="progress-item-text">🧵 Drawing supplies</span>
+                    <span class="status-icon">✅</span>
+                </li>
+                
+                <li class="progress-item">
+                    <span class="progress-item-text">🧵 Kites with the Billions logo that I'll be flying</span>
+                    <span class="status-icon">✅</span>
+                </li>
+                
+                <li class="progress-item">
+                    <span class="progress-item-text">🧵 Billions logo stickers and hangers</span>
+                    </li>
             </ul>
-            <p style="font-style: italic; color: #7edbff;">
+            <p style="font-style: italic; color: #7edbff; margin-top: 20px;">
                 <strong>Note:</strong> This is a personal commitment and creative plan, to be executed when resources (time and financial means) allow. Everything is done purely for the Billions community.
             </p>
         </section>
     </div>
+
     <div id="super-og-mission" class="info-card">
       <section>
         <h2 class="superog-title">My <span class="highlight">@Super OG</span> Mission & Daily Commitment</h2>
